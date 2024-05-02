@@ -1,6 +1,6 @@
 from flask import Flask
 from utils.db import db
-from services.contact import contacts
+from services.contact import predio
 from flask_sqlalchemy import SQLAlchemy
 from config import DATABASE_CONNECTION
 
@@ -9,8 +9,8 @@ app.config['SQLALCHEMY_DATABASE_URI']=DATABASE_CONNECTION
 
 #SQLAlchemy(app)
 
-db.init_app(app) 
-app.register_blueprint(contacts)
+db.init_app(app)
+app.register_blueprint(predio)
 
 with app.app_context():
     db.create_all
